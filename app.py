@@ -41,6 +41,18 @@ df_selection = df.query(
 st.title(":bar_chart: App Recommendation Dashboard")
 st.markdown("##")
 
+description = """
+Welcome to the App Recommendation Dashboard! With the mobile app market growing exponentially each day and a vast number of apps available, it can be challenging for users to find the right app recommendations that meet their privacy and usefulness criteria.
+
+ This system leverages app information from popular app markets to rank apps based on factors such as app permissions, popularity, ratings, and review sentiment. Specifically, we gather app metadata and reviews from the Google Play Store, the leading Android app store.
+
+By analyzing app permissions, user ratings, and sentiment from reviews, our system provides personalized recommendations that take into account privacy concerns and overall app quality. Whether you're looking for apps with strong privacy features or highly rated apps with positive user sentiment, our recommendation system aims to assist you in finding the perfect apps for your needs.
+
+Explore the App Recommendation Dashboard now to discover the top-ranked apps based on their app permissions, popularity, ratings, and review sentiment!
+"""
+
+
+
 
 fig_app_rank = px.bar(
 	df_selection,
@@ -63,7 +75,7 @@ st.plotly_chart(fig_app_rank)
 		
 
 
-
+st.markdown(description, unsafe_allow_html=True)
 # ---- HIDE STREAMLIT STYLE ----
 hide_st_style = """
             <style>
